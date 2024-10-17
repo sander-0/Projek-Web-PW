@@ -1,4 +1,4 @@
-const crypto = require("crypto");
+import { randomBytes } from "crypto";
 
-const secret = crypto.randomBytes(16).toString("hex");
+const secret = randomBytes(16).toString("hex");
 console.log(secret);
