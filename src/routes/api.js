@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { single, multiple } from "../middlewares/upload.middleware";
 import { single as _single, multiple as _multiple } from "../controllers/upload.controller";
-import { findAll, create, findOne, update, remove } from "../controllers/products.controller";
+import { findAll, create, findOne, update, remove } from "../controllers/menu.controller";
 import { findAll as _findAll, create as _create, findOne as _findOne, update as _update, delete as _delete } from "../controllers/categories.controller";
 import { login, register, me, profile } from "../controllers/auth.controller";
 import authMiddleware from "../middlewares/auth.middleware";

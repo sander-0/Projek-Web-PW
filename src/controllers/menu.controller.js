@@ -2,14 +2,14 @@ import { create, findAll, findOne, update, remove } from "../services/product.se
   
   export async function create(req, res) {
     /**
-     #swagger.tags = ['Products']
+     #swagger.tags = ['Menu']
      #swagger.security = [{
       "bearerAuth": []
      }]
      #swagger.requestBody = {
       required: true,
       schema: {
-        $ref: "#/components/schemas/ProductRequest"
+        $ref: "#/components/schemas/MenuRequest"
       }
      }
      */
@@ -29,7 +29,7 @@ import { create, findAll, findOne, update, remove } from "../services/product.se
 }
 export async function findAll(req, res) {
     /**
-     #swagger.tags = ['Products']
+     #swagger.tags = ['Menu']
      */
     try {
         const result = await findAll();
@@ -47,7 +47,7 @@ export async function findAll(req, res) {
 }
 export async function findOne(req, res) {
     /**
-     #swagger.tags = ['Products']
+     #swagger.tags = ['Menu']
      */
     try {
         const result = await findOne(req.params?.id);
@@ -66,14 +66,14 @@ export async function findOne(req, res) {
 }
 export async function update(req, res) {
     /**
-     #swagger.tags = ['Products']
+     #swagger.tags = ['Menu']
      #swagger.security = [{
       "bearerAuth": []
      }]
      #swagger.requestBody = {
       required: true,
       schema: {
-        $ref: "#/components/schemas/ProductRequest"
+        $ref: "#/components/schemas/MenuRequest"
       }
      }
     */
@@ -94,7 +94,7 @@ export async function update(req, res) {
 }
 export async function remove(req, res) {
     /**
-     #swagger.tags = ['Products']
+     #swagger.tags = ['Menu']
      #swagger.security = [{
       "bearerAuth": []
      }]
