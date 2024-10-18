@@ -1,4 +1,4 @@
-import { create as _create, find, findById, findOneAndUpdate, findOneAndDelete } from "../models/categories.model";
+import { create as _create, find, findById, findOneAndUpdate, findOneAndDelete } from "../models/categories.model.js";
 
 const create = async (payload) => {
   const result = await _create(payload);

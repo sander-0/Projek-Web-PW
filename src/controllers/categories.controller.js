@@ -1,4 +1,4 @@
-import { create, findAll, findOne, update, remove } from "../services/categories.service";
+import { create, findAll, findOne, update, remove } from "../services/categories.service.js";
 
 export async function create(req, res) {
     /**

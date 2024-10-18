@@ -1,170 +1,94 @@
 {
-  "openapi": "3.0.0",
+  "swagger": "2.0",
   "info": {
     "version": "v0.0.1",
     "title": "Dokumentasi API BukaToko",
     "description": "Dokumentasi API BukaToko"
   },
+  "host": "localhost:3000",
   "servers": [
     {
       "url": "http://localhost:3000/api",
       "description": "Local Server"
     }
   ],
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
   "paths": {
     "/categories": {
       "get": {
-        "tags": [
-          "Categories"
-        ],
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       },
       "post": {
-        "tags": [
-          "Categories"
-        ],
         "description": "",
         "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryRequest"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryRequest"
-              }
-            }
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/categories/{id}": {
       "get": {
-        "tags": [
-          "Categories"
-        ],
         "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       },
       "put": {
-        "tags": [
-          "Categories"
-        ],
         "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryRequest"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryRequest"
-              }
-            }
+          "default": {
+            "description": ""
           }
         }
       },
       "delete": {
-        "tags": [
-          "Categories"
-        ],
         "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
+        }
       }
     },
     "/products": {
       "get": {
         "tags": [
-          "Products"
+          "Menu"
         ],
         "description": "",
         "responses": {
@@ -178,7 +102,7 @@
       },
       "post": {
         "tags": [
-          "Products"
+          "Menu"
         ],
         "description": "",
         "responses": {
@@ -199,12 +123,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductRequest"
+                "$ref": "#/components/schemas/MenuRequest"
               }
             },
             "application/xml": {
               "schema": {
-                "$ref": "#/components/schemas/ProductRequest"
+                "$ref": "#/components/schemas/MenuRequest"
               }
             }
           }
@@ -214,7 +138,7 @@
     "/products/{id}": {
       "get": {
         "tags": [
-          "Products"
+          "Menu"
         ],
         "description": "",
         "parameters": [
@@ -222,9 +146,7 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
@@ -238,7 +160,7 @@
       },
       "put": {
         "tags": [
-          "Products"
+          "Menu"
         ],
         "description": "",
         "parameters": [
@@ -246,9 +168,7 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
@@ -269,12 +189,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductRequest"
+                "$ref": "#/components/schemas/MenuRequest"
               }
             },
             "application/xml": {
               "schema": {
-                "$ref": "#/components/schemas/ProductRequest"
+                "$ref": "#/components/schemas/MenuRequest"
               }
             }
           }
@@ -282,7 +202,7 @@
       },
       "delete": {
         "tags": [
-          "Products"
+          "Menu"
         ],
         "description": "",
         "parameters": [
@@ -290,9 +210,7 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
@@ -312,77 +230,20 @@
     },
     "/upload": {
       "post": {
-        "tags": [
-          "Media"
-        ],
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "file": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/uploads": {
       "post": {
-        "tags": [
-          "Media"
-        ],
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "files": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "format": "binary"
-                    }
-                  }
-                }
-              }
-            }
+          "default": {
+            "description": ""
           }
         }
       }
@@ -584,157 +445,51 @@
     },
     "schemas": {
       "CategoryRequest": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "example": "Aksesoris"
-          }
-        },
-        "xml": {
-          "name": "CategoryRequest"
-        }
+        "name": "Aksesoris"
       },
       "ProductRequest": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "example": "Kaos Pria"
-          },
-          "description": {
-            "type": "string",
-            "example": "Kaos Hitam"
-          },
-          "images": {
-            "type": "array",
-            "example": [
-              "https://res.cloudinary.com/drkp2wxz4/image/upload/v1724829863/samples/smile.jpg"
-            ],
-            "items": {
-              "type": "string"
-            }
-          },
-          "price": {
-            "type": "number",
-            "example": 20000
-          },
-          "qty": {
-            "type": "number",
-            "example": 25
-          },
-          "categoryId": {
-            "type": "string",
-            "example": "66e2f381abf9bf18c801c537"
-          }
-        },
-        "xml": {
-          "name": "ProductRequest"
-        }
+        "name": "Kaos Pria",
+        "description": "Kaos Hitam",
+        "images": [
+          "https://res.cloudinary.com/drkp2wxz4/image/upload/v1724829863/samples/smile.jpg"
+        ],
+        "price": 20000,
+        "qty": 25,
+        "categoryId": "66e2f381abf9bf18c801c537"
       },
       "OrderRequest": {
-        "type": "object",
-        "properties": {
-          "orderItems": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string",
-                  "example": "Kaos Pria"
-                },
-                "productId": {
-                  "type": "string",
-                  "example": "66e437d663948f2a24baaeb2"
-                },
-                "price": {
-                  "type": "number",
-                  "example": 20000
-                },
-                "quantity": {
-                  "type": "number",
-                  "example": 1
-                }
-              }
-            }
+        "orderItems": [
+          {
+            "name": "Sarung Tangan",
+            "productId": "66e2f36cabf9bf18c801c534",
+            "price": 50000,
+            "quantity": 2
+          },
+          {
+            "name": "Kaos Pria",
+            "productId": "66e437d663948f2a24baaeb2",
+            "price": 20000,
+            "quantity": 1
           }
-        },
-        "xml": {
-          "name": "OrderRequest"
-        }
+        ]
       },
       "LoginRequest": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "example": "joni2024@yopmail.com"
-          },
-          "password": {
-            "type": "string",
-            "example": "123412341"
-          }
-        },
-        "xml": {
-          "name": "LoginRequest"
-        }
+        "email": "joni2024@yopmail.com",
+        "password": "123412341"
       },
       "RegisterRequest": {
-        "type": "object",
-        "properties": {
-          "fullName": {
-            "type": "string",
-            "example": "joni joni"
-          },
-          "username": {
-            "type": "string",
-            "example": "joni2024"
-          },
-          "email": {
-            "type": "string",
-            "example": "joni2024@yopmail.com"
-          },
-          "password": {
-            "type": "string",
-            "example": "123412341"
-          },
-          "confirmPassword": {
-            "type": "string",
-            "example": "123412341"
-          }
-        },
-        "xml": {
-          "name": "RegisterRequest"
-        }
+        "fullName": "joni joni",
+        "username": "joni2024",
+        "email": "joni2024@yopmail.com",
+        "password": "123412341",
+        "confirmPassword": "123412341"
       },
       "UpdateProfileRequest": {
-        "type": "object",
-        "properties": {
-          "fullName": {
-            "type": "string",
-            "example": "joni joni"
-          },
-          "username": {
-            "type": "string",
-            "example": "joni2024"
-          },
-          "email": {
-            "type": "string",
-            "example": "joni2024@yopmail.com"
-          },
-          "password": {
-            "type": "string",
-            "example": "123412341"
-          },
-          "confirmPassword": {
-            "type": "string",
-            "example": "123412341"
-          }
-        },
-        "xml": {
-          "name": "UpdateProfileRequest"
-        }
+        "fullName": "joni joni",
+        "username": "joni2024",
+        "email": "joni2024@yopmail.com",
+        "password": "123412341",
+        "confirmPassword": "123412341"
       }
     }
   }

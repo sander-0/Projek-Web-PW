@@ -1,7 +1,6 @@
-import { findById } from "../models/user.model";
-import { login, register, updateProfile } from "../services/auth.service";
+import { findById } from "../models/user.model.js";
+import { login, register, updateProfile } from "../services/auth.service.js";
 import { object, string, ref, array } from "yup";
-import { ObjectId } from "mongoose";
 
 const registerSchema = object().shape({
   fullName: string().required(),

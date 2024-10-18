@@ -1,5 +1,5 @@
 import { sign, verify } from "jsonwebtoken";
-import { SECRET } from "./env";
+import { SECRET } from "./env.js";
 
 // Fungsi untuk menghasilkan token JWT
 const generateToken = (payload) => {

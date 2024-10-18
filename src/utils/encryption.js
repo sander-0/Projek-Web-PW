@@ -1,5 +1,5 @@
 import { pbkdf2Sync } from "crypto";
-import { SECRET } from "./env";
+import { SECRET } from "./env.js";
 
 const encrypt = (password) => {
   const encrypted = pbkdf2Sync(password, SECRET, 1000, 64, "sha512")

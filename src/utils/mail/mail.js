@@ -1,7 +1,7 @@
 import { createTransport } from "nodemailer";
 import { renderFile } from "ejs";
 import { join } from "path";
-import { USER_MAIL, PASS_MAIL } from "../env";
+import { USER_MAIL, PASS_MAIL } from "../env.js";
 
 const transporter = createTransport({
     service: "Zoho",

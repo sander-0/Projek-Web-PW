@@ -1,5 +1,5 @@
-import { create, find } from "../models/order.model";
-import { findById } from "../models/menu.model";
+import { create, find } from "../models/order.model.js";
+import { findById } from "../models/menu.model.js";
 
 const createOrder = async (payload) => {
   // Validasi quantity

@@ -1,4 +1,4 @@
-import { getUserData } from "../utils/jwt";
+import { getUserData } from "../utils/jwt.js";
 
 // Middleware untuk autentikasi
 const authMiddleware = (req, res, next) => {

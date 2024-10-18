@@ -1,4 +1,4 @@
-import { create, findAll, findOne, update, remove } from "../services/product.service";
+import { create, findAll, findOne, update, remove } from "../services/product.service.js";
   
   export async function create(req, res) {
     /**

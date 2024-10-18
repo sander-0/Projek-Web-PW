@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { single, multiple } from "../middlewares/upload.middleware";
-import { single as _single, multiple as _multiple } from "../controllers/upload.controller";
-import { findAll, create, findOne, update, remove } from "../controllers/menu.controller";
-import { findAll as _findAll, create as _create, findOne as _findOne, update as _update, delete as _delete } from "../controllers/categories.controller";
-import { login, register, me, profile } from "../controllers/auth.controller";
-import authMiddleware from "../middlewares/auth.middleware";
-import rbacMiddleware from "../middlewares/rbac.middleware";
-import { createOrder, findAllByUser } from "../controllers/order.controller";
+import { single, multiple } from "../middlewares/upload.middleware.js";
+import { single as _single, multiple as _multiple } from "../controllers/upload.controller.js";
+import { findAll, create, findOne, update, remove } from "../controllers/menu.controller.js";
+import { findAll as _findAll, create as _create, findOne as _findOne, update as _update, delete as _delete } from "../controllers/categories.controller.js";
+import { login, register, me, profile } from "../controllers/auth.controller.js";
+import authMiddleware from "../middlewares/auth.middleware.js";
+import rbacMiddleware from "../middlewares/rbac.middleware.js";
+import { createOrder, findAllByUser } from "../controllers/order.controller.js";
 
 const router = Router();
 
@@ -17,7 +17,7 @@ router.get("/categories/:id", _findOne);
 router.put("/categories/:id", _update);
 router.delete("/categories/:id", _delete);
 
-// CRUD Products
+// CRUD 
 router.get("/products", findAll);
 router.post("/products", create);
 router.get("/products/:id", findOne);

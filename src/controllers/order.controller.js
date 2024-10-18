@@ -1,8 +1,7 @@
-const { ObjectId } = require('mongodb');
-const OrderModel = require('../models/order.model');
-const ProductModel = require('../models/products.model').default;
-const UserModel = require('../models/user.model').default;
-const mail = require("../utils/mail");
+import OrderModel, { find } from '../models/order.model.js';
+import ProductModel from '../models/products.model.js';
+import UserModel from '../models/user.model.js';
+import { render, send } from "../utils/mail.js";
 
 // Fungsi untuk membuat order baru
 async function createOrder(req, res) {
@@ -58,7 +57,7 @@ async function createOrder(req, res) {
     const userName = user ? user.fullName : 'Unknown';
 
     if (user && user.email) {
-      const content = await mail.render('invoice.ejs', {
+      const content = await render('invoice.ejs', {
         customerName: user.fullName,
         orderItems: savedOrder.orderItems,
         grandTotal: savedOrder.grandTotal,
@@ -67,7 +66,7 @@ async function createOrder(req, res) {
         year: new Date().getFullYear(),
       });
 
-      await mail.send({
+      await send({
         to: user.email,
         subject: "Invoice for Your Order",
         content,
@@ -107,7 +106,7 @@ async function findAllByUser(req, res) {
       return res.status(401).json({ message: 'User not authenticated' });
     }
 
-    const orders = await OrderModel.find({ createdBy: userId });
+    const orders = await find({ createdBy: userId });
 
     if (orders.length === 0) {
       return res.status(404).json({
@@ -129,4 +128,4 @@ async function findAllByUser(req, res) {
   }
 }
 
-module.exports = { createOrder, findAllByUser };
+export default { createOrder, findAllByUser };

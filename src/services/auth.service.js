@@ -1,4 +1,4 @@
-import { findOne, create, findById, findByIdAndUpdate } from "../models/user.model";
+import { findOne, create, findById, findByIdAndUpdate } from "../models/user.model.js";
 import { encrypt } from "../utils/encryption";
 import { generateToken } from "../utils/jwt";
 

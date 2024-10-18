@@ -1,9 +1,9 @@
 import express from "express";
-import db from "./utils/database";
-import routes from "./routes/api";
+import db from "./utils/database.js";
+import routes from "./routes/api.js";
 import { json, urlencoded } from "body-parser";
-import docs from "./docs/route";
-import { errorNotFoundMiddleware, errorServerMiddleware } from "./middlewares/error.middleware";
+import docs from "./docs/route.js";
+import { errorNotFoundMiddleware, errorServerMiddleware } from "./middlewares/error.middleware.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;

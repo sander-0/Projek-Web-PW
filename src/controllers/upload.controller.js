@@ -1,5 +1,5 @@
-import { toDataURI } from "../utils/encode";
-import { handleUpload } from "../utils/cloudinary";
+import { toDataURI } from "../utils/encode.js";
+import { handleUpload } from "../utils/cloudinary.js";
 
 export async function single(req, res) {
   /**

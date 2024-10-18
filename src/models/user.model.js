@@ -1,5 +1,5 @@
 import { Schema as _Schema, model } from "mongoose";
-import { encrypt } from "../utils/encryption";
+import { encrypt } from "../utils/encryption.js";
 
 const Schema = _Schema;
 
